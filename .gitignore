@@ -1,0 +1,22 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+
+# Ignore all .iml files
+*.iml
+
+# Ignore all .DS_Store files
+.DS_Store
+
+# Ignore all .idea files
+.idea/
+
+# Ignore all eclipse files
+.classpath
+.project
+.settings/
+
+# Ignore all gradle files
+.gradle/
+build/
+
