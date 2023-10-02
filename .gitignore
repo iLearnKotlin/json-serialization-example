@@ -27,6 +27,11 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
-
 # Ignore Gradle build output directory
 build
+
+# Ignore bin directory
+bin/
+
+# Ignore out directory
+out/

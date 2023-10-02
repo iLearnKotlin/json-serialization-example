@@ -1,0 +1,367 @@
+{
+  "id": 0,
+  "name": "Gạo nếp cái",
+  "en": "Glutinous rice, milled",
+  "unit": "g",
+  "value": 100,
+  "calories": 344,
+  "carbs": 74.5,
+  "protein": 8.6,
+  "fat": 1.5,
+  "image": "unknown",
+  "verified": true,
+  "nutrients": [
+    {
+      "id": 0,
+      "name": "Năng lượng",
+      "desc": "(Energy)",
+      "unit": "kcal",
+      "value": 344
+    },
+    {
+      "id": 1,
+      "name": "Protein",
+      "desc": "",
+      "unit": "g",
+      "value": 8.6
+    },
+    {
+      "id": 2,
+      "name": "Glucid",
+      "desc": "(Carbohydrate)",
+      "unit": "g",
+      "value": 74.5
+    },
+    {
+      "id": 3,
+      "name": "Celluloza",
+      "desc": "(Fiber)",
+      "unit": "g",
+      "value": 0.6
+    },
+    {
+      "id": 4,
+      "name": "Đường tổng số",
+      "desc": "(Sugar)",
+      "unit": "g",
+      "value": -1
+    },
+    {
+      "id": 5,
+      "name": "Lipid",
+      "desc": "(Fat)",
+      "unit": "g",
+      "value": 1.5
+    },
+    {
+      "id": 6,
+      "name": "Tổng số acid béo no",
+      "desc": "(Total saturated fatty acid)",
+      "unit": "g",
+      "value": -1
+    },
+    {
+      "id": 7,
+      "name": "Ts acid béo không no 1 nối đôi",
+      "desc": "(Total monounsaturated fatty acid)",
+      "unit": "g",
+      "value": -1
+    },
+    {
+      "id": 8,
+      "name": "Ts acid béo không no nhiều nối đôi",
+      "desc": "(Total polyunsaturated fatty acid)",
+      "unit": "g",
+      "value": -1
+    },
+    {
+      "id": 9,
+      "name": "Ts acid béo trans",
+      "desc": "(Total trans fatty acid)",
+      "unit": "g",
+      "value": -1
+    },
+    {
+      "id": 10,
+      "name": "Cholesterol",
+      "desc": "",
+      "unit": "mg",
+      "value": 0
+    },
+    {
+      "id": 11,
+      "name": "Natri",
+      "desc": "(Sodium)",
+      "unit": "mg",
+      "value": 3
+    },
+    {
+      "id": 12,
+      "name": "Nước",
+      "desc": "(Water)",
+      "unit": "g",
+      "value": 14
+    },
+    {
+      "id": 13,
+      "name": "Vitamin A",
+      "desc": "(Retinol)",
+      "unit": "µg",
+      "value": 0
+    },
+    {
+      "id": 14,
+      "name": "Beta-caroten",
+      "desc": "",
+      "unit": "µg",
+      "value": 0
+    },
+    {
+      "id": 15,
+      "name": "Vitamin B1",
+      "desc": "(Thiamine)",
+      "unit": "mg",
+      "value": 0.14
+    },
+    {
+      "id": 16,
+      "name": "Vitamin B2",
+      "desc": "(Riboflavin)",
+      "unit": "mg",
+      "value": 0.06
+    },
+    {
+      "id": 17,
+      "name": "Vitamin PP",
+      "desc": "(Niacin)",
+      "unit": "mg",
+      "value": 2.4
+    },
+    {
+      "id": 18,
+      "name": "Vitamin B5",
+      "desc": "(Pantothenic acid)",
+      "unit": "mg",
+      "value": -1
+    },
+    {
+      "id": 19,
+      "name": "Vitamin B6",
+      "desc": "(Pyridoxine)",
+      "unit": "mg",
+      "value": -1
+    },
+    {
+      "id": 20,
+      "name": "Vitamin H",
+      "desc": "(Biotin)",
+      "unit": "µg",
+      "value": -1
+    },
+    {
+      "id": 21,
+      "name": "Folat",
+      "desc": "(Folate)",
+      "unit": "µg",
+      "value": -1
+    },
+    {
+      "id": 22,
+      "name": "Vitamin B9",
+      "desc": "(Folic acid)",
+      "unit": "µg",
+      "value": -1
+    },
+    {
+      "id": 23,
+      "name": "Vitamin B12",
+      "desc": "(Cyanocobalamine)",
+      "unit": "µg",
+      "value": -1
+    },
+    {
+      "id": 24,
+      "name": "Vitamin C",
+      "desc": "(Ascorbic acid)",
+      "unit": "mg",
+      "value": 0
+    },
+    {
+      "id": 25,
+      "name": "Vitamin D",
+      "desc": "(Calciferol)",
+      "unit": "µg",
+      "value": 0
+    },
+    {
+      "id": 26,
+      "name": "Vitamin E",
+      "desc": "(Alpha-tocopherol)",
+      "unit": "mg",
+      "value": -1
+    },
+    {
+      "id": 27,
+      "name": "Vitamin K",
+      "desc": "(Phylloquinone)",
+      "unit": "µg",
+      "value": -1
+    },
+    {
+      "id": 28,
+      "name": "Calci",
+      "desc": "(Calcium)",
+      "unit": "mg",
+      "value": 32
+    },
+    {
+      "id": 29,
+      "name": "Sắt",
+      "desc": "(Iron)",
+      "unit": "mg",
+      "value": 1.2
+    },
+    {
+      "id": 30,
+      "name": "Magiê",
+      "desc": "(Magnesium)",
+      "unit": "mg",
+      "value": 17
+    },
+    {
+      "id": 31,
+      "name": "Mangan",
+      "desc": "(Manganese)",
+      "unit": "mg",
+      "value": 1.1
+    },
+    {
+      "id": 32,
+      "name": "Phospho",
+      "desc": "(Phosphorous)",
+      "unit": "mg",
+      "value": 98
+    },
+    {
+      "id": 33,
+      "name": "Kali",
+      "desc": "(Potassium)",
+      "unit": "mg",
+      "value": 282
+    },
+    {
+      "id": 34,
+      "name": "Kẽm",
+      "desc": "(Zinc)",
+      "unit": "mg",
+      "value": 2.2
+    },
+    {
+      "id": 35,
+      "name": "Đồng",
+      "desc": "(Copper)",
+      "unit": "µg",
+      "value": 280
+    },
+    {
+      "id": 36,
+      "name": "Selen",
+      "desc": "(Selenium)",
+      "unit": "µg",
+      "value": -1
+    },
+    {
+      "id": 37,
+      "name": "Histidin",
+      "desc": "",
+      "unit": "mg",
+      "value": 133
+    },
+    {
+      "id": 38,
+      "name": "Isoleucin",
+      "desc": "",
+      "unit": "mg",
+      "value": 222
+    },
+    {
+      "id": 39,
+      "name": "Leucin",
+      "desc": "",
+      "unit": "mg",
+      "value": 531
+    },
+    {
+      "id": 40,
+      "name": "Lysin",
+      "desc": "",
+      "unit": "mg",
+      "value": 207
+    },
+    {
+      "id": 41,
+      "name": "Methionin",
+      "desc": "",
+      "unit": "mg",
+      "value": 66
+    },
+    {
+      "id": 42,
+      "name": "Phenylalanin",
+      "desc": "",
+      "unit": "mg",
+      "value": 229
+    },
+    {
+      "id": 43,
+      "name": "Threonin",
+      "desc": "",
+      "unit": "mg",
+      "value": 177
+    },
+    {
+      "id": 44,
+      "name": "Tryptophan",
+      "desc": "",
+      "unit": "mg",
+      "value": -1
+    },
+    {
+      "id": 45,
+      "name": "Valin",
+      "desc": "",
+      "unit": "mg",
+      "value": 317
+    },
+    {
+      "id": 46,
+      "name": "Arginin",
+      "desc": "",
+      "unit": "mg",
+      "value": 435
+    },
+    {
+      "id": 47,
+      "name": "Tyrosin",
+      "desc": "",
+      "unit": "mg",
+      "value": 111
+    },
+    {
+      "id": 48,
+      "name": "Cystin",
+      "desc": "",
+      "unit": "mg",
+      "value": 96
+    },
+    {
+      "id": 49,
+      "name": "Caffeine",
+      "desc": "",
+      "unit": "mg",
+      "value": 96
+    }
+  ],
+  "foodCategory": "Cereal",
+  "refId": 123
+}

@@ -8,7 +8,7 @@
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.9.0"
-
+    kotlin("plugin.serialization") version "1.9.10"
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
@@ -29,6 +29,12 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:32.1.1-jre")
+
+    // Add the JSON serialization library dependency:org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+    implementation("org.apache.httpcomponents.client5:httpclient5:5.2.1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2")
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

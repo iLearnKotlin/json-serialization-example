@@ -1,0 +1,302 @@
+[
+    {
+        "id": 0,
+        "vi": "Năng lượng",
+        "nuti": "Năng lượng",
+        "usda": "Energy (Atwater General Factors)"
+    },
+    {
+        "id": 0,
+        "vi": "Năng lượng",
+        "nuti": "",
+        "usda": "Energy"
+    },
+    {
+        "id": 1,
+        "vi": "Protein",
+        "nuti": "Chất Đạm",
+        "usda": "Protein"
+    },
+    {
+        "id": 2,
+        "vi": "Glucid",
+        "nuti": "Chất bột đường",
+        "usda": "Carbohydrate, by difference"
+    },
+    {
+        "id": 3,
+        "vi": "Celluloza",
+        "nuti": "Chất xơ",
+        "usda": "Fiber, total dietary"
+    },
+    {
+        "id": 4,
+        "vi": "Đường tổng số",
+        "nuti": "Đường tổng số",
+        "usda": "Sugars, Total"
+    },
+    {
+        "id": 5,
+        "vi": "Lipid",
+        "nuti": "Chất Béo",
+        "usda": "Total lipid (fat)"
+    },
+    {
+        "id": 6,
+        "vi": "Tổng số acid béo no",
+        "nuti": "Tổng số a.béo no",
+        "usda": "Fatty acids, total saturated"
+    },
+    {
+        "id": 7,
+        "vi": "Ts acid béo không no 1 nối đôi",
+        "nuti": "Tổng số a.béo không no một nối đôi",
+        "usda": "Fatty acids, total monounsaturated"
+    },
+    {
+        "id": 8,
+        "vi": "Ts acid béo không no nhiều nối đôi",
+        "nuti": "Tổng số a. béo không no nhiều nối đôi",
+        "usda": "Fatty acids, total polyunsaturated"
+    },
+    {
+        "id": 9,
+        "vi": "Ts acid béo trans",
+        "nuti": "Tổng số a. béo Trans",
+        "usda": "Fatty acids, total trans"
+    },
+    {
+        "id": 10,
+        "vi": "Cholesterol",
+        "nuti": "Cholesterol",
+        "usda": "Cholesterol"
+    },
+    {
+        "id": 11,
+        "vi": "Natri",
+        "nuti": "Natri",
+        "usda": "Sodium, Na"
+    },
+    {
+        "id": 12,
+        "vi": "Nước",
+        "nuti": "Nước",
+        "usda": "Water"
+    },
+    {
+        "id": 13,
+        "vi": "Vitamin A",
+        "nuti": "Vitamin A",
+        "usda": "Vitamin A, RAE"
+    },
+    {
+        "id": 14,
+        "vi": "Beta-caroten",
+        "nuti": "Beta Caroten",
+        "usda": "Carotene, beta"
+    },
+    {
+        "id": 15,
+        "vi": "Vitamin B1",
+        "nuti": "Vitamin B1",
+        "usda": "Thiamin"
+    },
+    {
+        "id": 16,
+        "vi": "Vitamin B2",
+        "nuti": "Vitamin B2",
+        "usda": "Riboflavin"
+    },
+    {
+        "id": 17,
+        "vi": "Vitamin PP",
+        "nuti": "Vitamin PP",
+        "usda": "Niacin"
+    },
+    {
+        "id": 18,
+        "vi": "Vitamin B5",
+        "nuti": "Vitamin B5",
+        "usda": "Pantothenic acid"
+    },
+    {
+        "id": 19,
+        "vi": "Vitamin B6",
+        "nuti": "Vitamin B6",
+        "usda": "Vitamin B-6"
+    },
+    {
+        "id": 20,
+        "vi": "Vitamin H",
+        "nuti": "Vitamin H",
+        "usda": "Biotin"
+    },
+    {
+        "id": 21,
+        "vi": "Folat",
+        "nuti": "Folat",
+        "usda": "Folate, total"
+    },
+    {
+        "id": 22,
+        "vi": "Vitamin B9",
+        "nuti": "Acid Folic",
+        "usda": "Folic acid"
+    },
+    {
+        "id": 23,
+        "vi": "Vitamin B12",
+        "nuti": "Vitamin B12",
+        "usda": "Vitamin B-12"
+    },
+    {
+        "id": 24,
+        "vi": "Vitamin C",
+        "nuti": "Vitamin C",
+        "usda": "Vitamin C, total ascorbic acid"
+    },
+    {
+        "id": 25,
+        "vi": "Vitamin D",
+        "nuti": "Vitamin D",
+        "usda": "Vitamin D (D2 + D3)"
+    },
+    {
+        "id": 26,
+        "vi": "Vitamin E",
+        "nuti": "Vitamin E",
+        "usda": "Vitamin E (alpha-tocopherol)"
+    },
+    {
+        "id": 27,
+        "vi": "Vitamin K",
+        "nuti": "Vitamin K",
+        "usda": "Vitamin K (phylloquinone)"
+    },
+    {
+        "id": 28,
+        "vi": "Calci",
+        "nuti": "Canxi",
+        "usda": "Calcium, Ca"
+    },
+    {
+        "id": 29,
+        "vi": "Sắt",
+        "nuti": "Sắt",
+        "usda": "Iron, Fe"
+    },
+    {
+        "id": 30,
+        "vi": "Magiê",
+        "nuti": "Magie",
+        "usda": "Magnesium, Mg"
+    },
+    {
+        "id": 31,
+        "vi": "Mangan",
+        "nuti": "Mangan",
+        "usda": "Manganese, Mn"
+    },
+    {
+        "id": 32,
+        "vi": "Phospho",
+        "nuti": "Phospho",
+        "usda": "Phosphorus, P"
+    },
+    {
+        "id": 33,
+        "vi": "Kali",
+        "nuti": "Kali",
+        "usda": "Potassium, K"
+    },
+    {
+        "id": 34,
+        "vi": "Kẽm",
+        "nuti": "Kẽm",
+        "usda": "Zinc, Zn"
+    },
+    {
+        "id": 35,
+        "vi": "Đồng",
+        "nuti": "Đồng",
+        "usda": "Copper, Cu"
+    },
+    {
+        "id": 36,
+        "vi": "Selen",
+        "nuti": "Selen",
+        "usda": "Selenium, Se"
+    },
+    {
+        "id": 37,
+        "vi": "Histidin",
+        "nuti": "Histidin",
+        "usda": "Histidine"
+    },
+    {
+        "id": 38,
+        "vi": "Isoleucin",
+        "nuti": "Isoleucin",
+        "usda": "Isoleucine"
+    },
+    {
+        "id": 39,
+        "vi": "Leucin",
+        "nuti": "Leucin",
+        "usda": "Leucine"
+    },
+    {
+        "id": 40,
+        "vi": "Lysin",
+        "nuti": "Lysin",
+        "usda": "Lysine"
+    },
+    {
+        "id": 41,
+        "vi": "Methionin",
+        "nuti": "Methionin",
+        "usda": "Methionine"
+    },
+    {
+        "id": 42,
+        "vi": "Phenylalanin",
+        "nuti": "Phenylalanin",
+        "usda": "Phenylalanine"
+    },
+    {
+        "id": 43,
+        "vi": "Threonin",
+        "nuti": "Threonin",
+        "usda": "Threonine"
+    },
+    {
+        "id": 44,
+        "vi": "Tryptophan",
+        "nuti": "Tryptophan",
+        "usda": "Tryptophan"
+    },
+    {
+        "id": 45,
+        "vi": "Valin",
+        "nuti": "Valin",
+        "usda": "Valine"
+    },
+    {
+        "id": 46,
+        "vi": "Arginin",
+        "nuti": "Arginine",
+        "usda": "Arginine"
+    },
+    {
+        "id": 47,
+        "vi": "Tyrosin",
+        "nuti": "Tyrosin",
+        "usda": "Tyrosine"
+    },
+    {
+        "id": 48,
+        "vi": "Cystin",
+        "nuti": "Cystin",
+        "usda": "Cystine"
+    }
+]

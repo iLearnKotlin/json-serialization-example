@@ -3,13 +3,161 @@
  */
 package json.serialization.example
 
-class App {
-    val greeting: String
-        get() {
-            return "Hello World!"
+import com.google.common.cache.CacheBuilder
+import com.google.common.cache.CacheLoader
+import com.google.common.cache.LoadingCache
+import json.serialization.example.handler.GoogleTranslateHandler
+import json.serialization.example.model.google.Dictionary
+import json.serialization.example.model.google.TranslationLang
+import json.serialization.example.model.nutrilife.NutriLifeFood
+import json.serialization.example.model.nutrilife.NutriLifeNutrient
+import json.serialization.example.model.usda.Data
+import json.serialization.example.model.usda.FoodNutrient
+import json.serialization.example.model.usda.SurveyFood
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+import java.io.File
+import java.util.*
+
+
+class App private constructor() {
+    private object Holder {
+        val INSTANCE = App()
+    }
+
+    companion object {
+        @JvmStatic
+        fun getInstance(): App {
+            return Holder.INSTANCE
         }
+        @JvmStatic
+        val JSON = Json { ignoreUnknownKeys = true }
+    }
+
+    private val nutrientDictionaryCache: MutableMap<String, NutriLifeNutrient.NutrientDictionary> = mutableMapOf()
+        get() {
+            if (field.isEmpty()) {
+                val nutrientDictionaries: List<NutriLifeNutrient.NutrientDictionary> =
+                    Json.decodeFromString(getJson("input/nutrient-dictionary.json"))
+                field.putAll(nutrientDictionaries.associateBy { it.usda })
+            }
+            return field
+        }
+    private val nutriLifeNutrientCache: MutableMap<Long, NutriLifeNutrient> = mutableMapOf()
+        get() {
+            if (field.isEmpty()) {
+                val nutriLifeFood: NutriLifeFood = Json.decodeFromString(getJson("input/sample.json"))
+                field.putAll(nutriLifeFood.nutrients.associateBy { it.id!! })
+            }
+            return field
+        }
+
+    private val dictionaryCacheGuava: LoadingCache<String, Dictionary> =
+        CacheBuilder.newBuilder().build(object : CacheLoader<String, Dictionary>() {
+            override fun load(key: String): Dictionary {
+                return Dictionary(key, key, translate(key))
+            }
+        })
+        get() {
+            if (field.size() == 0L) {
+                val nutrientDictionaries: List<Dictionary> = Json.decodeFromString(getJson("input/dictionary.json"))
+                field.putAll(nutrientDictionaries.associateBy { it.key })
+            }
+            return field
+        }
+
+    private fun translate(key: String): String {
+        return GoogleTranslateHandler.getInstance().translate(key, TranslationLang.en, TranslationLang.vi)
+    }
+
+    /**
+     * Read a file from the resources folder and return it as a string.
+     *
+     * @param path The path to the file relative to the resources folder.
+     * @return The file content as a string.
+     */
+    private fun getJson(path: String): String {
+        val inputStream = javaClass.classLoader.getResourceAsStream(path)
+        return inputStream!!.bufferedReader().use { it.readText() }
+    }
+
+    fun convertSurveyFoodsToNutriLifeFoods() {
+        val data: Data = JSON.decodeFromString(getJson("input/survey-foods.json"))
+        val surveyFoods: List<SurveyFood> = data.surveyFoods
+        println("surveyFoods.size: ${surveyFoods.size}")
+        val nutriLifeFoods: List<NutriLifeFood> = surveyFoods.map(makeNutriLifeFoodFromSurveyFood)
+        val nutriLifeFoodsJson: String = Json.encodeToString(nutriLifeFoods)
+        // write nutriLifeFoodsJson to file
+        val file = File("app/src/main/resources/output/nutrilife-foods.json")
+        file.writeText(nutriLifeFoodsJson)
+    }
+
+    private val makeNutriLifeFoodFromSurveyFood = { surveyFood: SurveyFood ->
+        val energyTotal1: Double = surveyFood.foodNutrients.filter { fn ->
+            fn.nutrient.name == "Energy" && fn.nutrient.unitName == "kcal"
+        }.map(FoodNutrient::amount).sum()
+        val energyTotal2: Double? = surveyFood.foodNutrients.filter { fn ->
+            fn.nutrient.name == "Energy (Atwater General Factors)" && fn.nutrient.unitName == "kcal"
+        }.map(FoodNutrient::amount).reduceOrNull { acc, d -> acc + d }
+        val carbTotal: Double? = surveyFood.foodNutrients.filter { fn ->
+            fn.nutrient.name == "Carbohydrate, by difference"
+        }.map(FoodNutrient::amount).reduceOrNull { acc, d -> acc + d }
+        val proteinTotal: Double? = surveyFood.foodNutrients.filter { fn ->
+            fn.nutrient.name == "Protein"
+        }.map(FoodNutrient::amount).reduceOrNull { acc, d -> acc + d }
+        val fatTotal: Double? = surveyFood.foodNutrients.filter { fn ->
+            fn.nutrient.name == "Total lipid (fat)"
+        }.map(FoodNutrient::amount).reduceOrNull { acc, d -> acc + d }
+        val vi: String = dictionaryCacheGuava.get(surveyFood.description).vi
+        val nutriLifeFood = NutriLifeFood(
+            id = null,
+            refId = surveyFood.fdcId,
+            name = vi.substring(0, 1).uppercase(Locale.getDefault()) + vi.substring(1),
+            en = surveyFood.description,
+            unit = "g",
+            value = 100.00,
+            // if energyTotal2 != 0.0 then energyTotal2 else energyTotal1
+            calories = if (energyTotal2 != 0.0) energyTotal2 else energyTotal1,
+            carbs = carbTotal,
+            protein = proteinTotal,
+            fat = fatTotal,
+            nutrients = surveyFood.foodNutrients.map(makeNutriLifeNutrientFromUsdaFoodNutrient)
+                .filter { it.id!! <= 49L && !(it.id == 0L && it.unit == "kJ") }.sortedWith(compareBy { it.id }),
+            image = "unknown",
+            verified = false,
+            foodCategory = surveyFood.foodClass?: "uncategorized",
+        )
+        nutriLifeFood
+    }
+    private val makeNutriLifeNutrientFromUsdaFoodNutrient = { surveyNutrient: FoodNutrient ->
+        val id: Long = surveyNutrient.nutrient.id
+        val name: String = surveyNutrient.nutrient.name
+        val unitName: String = surveyNutrient.nutrient.unitName
+        val nutrientDictionary = nutrientDictionaryCache[name]
+        NutriLifeNutrient(
+            id = nutrientDictionary?.id ?: id,
+            name = nutrientDictionary?.vi ?: name,
+            desc = nutriLifeNutrientCache[nutrientDictionary?.id]?.desc,
+            unit = unitName,
+            value = surveyNutrient.amount
+        )
+    }
+
+    fun writeCacheToFile() {
+        val cachedDictionaries: List<Dictionary> = dictionaryCacheGuava.asMap().values.toList()
+        val cachedDictionariesJson: String = Json.encodeToString(cachedDictionaries)
+        // write cachedDictionariesJson to file
+        val file = File("app/src/main/resources/input/dictionary.json")
+        file.writeText(cachedDictionariesJson)
+    }
 }
 
 fun main() {
-    println(App().greeting)
+    try {
+        App.getInstance().convertSurveyFoodsToNutriLifeFoods()
+    } finally {
+        App.getInstance().writeCacheToFile()
+    }
 }
